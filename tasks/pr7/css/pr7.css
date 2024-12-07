@@ -6,7 +6,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #FFDAB9;
+    background-color: #FFDAB9; /* Pale pink-orange color */
 }
 
 .header {
@@ -31,7 +31,7 @@ body {
 
 .intro {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 100px; /* To avoid content being hidden behind the fixed header */
     margin-bottom: 20px;
 }
 
@@ -43,7 +43,6 @@ body {
 }
 
 .button {
-    position: relative;
     padding: 10px 20px;
     font-size: 1em;
     color: #fff;
@@ -51,25 +50,12 @@ body {
     border: 5px solid transparent;
     border-radius: 15px;
     cursor: pointer;
-    transition: background-color 0.3s, border 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
-.button::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border-radius: 15px;
-    background: linear-gradient(45deg, lime, blue, magenta);
-    z-index: -1;
-    transition: opacity 0.3s;
-    opacity: 0;
-}
-
-.button--cta:hover::before {
-    opacity: 1;
+.button--cta:hover {
+    transform: scale(1.1);
+    background-color: #333;
 }
 
 .footer {
@@ -102,23 +88,5 @@ body {
     }
     100% {
         border-image-source: linear-gradient(45deg, orange, red, yellow);
-    }
-}
-
-@keyframes buttonBorderAnimation {
-    0% {
-        background: linear-gradient(45deg, lime, blue, magenta);
-    }
-    25% {
-        background: linear-gradient(45deg, blue, magenta, lime);
-    }
-    50% {
-        background: linear-gradient(45deg, magenta, lime, blue);
-    }
-    75% {
-        background: linear-gradient(45deg, lime, blue, magenta);
-    }
-    100% {
-        background: linear-gradient(45deg, blue, magenta, lime);
     }
 }
