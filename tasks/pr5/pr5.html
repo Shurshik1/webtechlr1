@@ -1,54 +1,114 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Реєстрація</title>
-  <link rel="stylesheet" href="css/pr2.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/pr5.css">
 </head>
 <body>
-  <header id="header">
-    <h1>Реєстрація</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html#labs">Список лабораторних</a></li>
-      </ul>
-    </nav>
-  </header>
+<div class="planner">
+    <div class="header">
+        <h1>Weekly Plan</h1>
+        <div class="header-info">
+            <div class="week-of">
+                <label>Week of: <input type="text"></label>
+            </div>
+            <div class="bad-habit">
+                <label>Healthy Habit: <input type="text"></label>
+            </div>
+            <div class="checkbox-group">
+                <label>Rocked it<input type="checkbox"> </label>
+                <label>Room for improvement<input type="checkbox"> </label>
+            </div>
+        </div>
+    </div>
 
-  <main>
-    <section id="registration">
-      <h2>Форма реєстрації</h2>
-      <form action="https://webhook.site/19944ac2-5a6b-4084-8089-7b21b02e2eda" method="post">
-        <label for="firstName">Ім'я:</label>
-        <input type="text" id="firstName" name="firstName" required>
-        
-        <label for="lastName">Прізвище:</label>
-        <input type="text" id="lastName" name="lastName" required>
-        
-        <label for="email">Електронна пошта:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="password">Пароль:</label>
-        <input type="password" id="password" name="password" required>
-        
-        <label for="confirmPassword">Підтвердження паролю:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" required>
-        
-        <label for="dob">Дата народження:</label>
-        <input type="date" id="dob" name="dob">
-        
-        <label for="gender">Стать:</label>
-        <select id="gender" name="gender">
-          <option value="male">Чоловіча</option>
-          <option value="female">Жіноча</option>
-          <option value="other">Інша</option>
-        </select>
-        
-        <input type="submit" value="Зареєструватися">
-      </form>
-    </section>
-  </main>
+    <div class="main">
+        <div class="sidebar">
+            <h2 class="todo-title">TO DO</h2>
+            <h2>Top 3 Goals</h2>
+            <ul>
+                <li><input type="checkbox"> <input type="text" placeholder="Goal 1"></li>
+                <li><input type="checkbox"> <input type="text" placeholder="Goal 2"></li>
+                <li><input type="checkbox"> <input type="text" placeholder="Goal 3"></li>
+            </ul>
+            <h2>Everything Else</h2>
+            <ul>
+                <li><input type="checkbox"> <input type="text" placeholder="Task 1"></li>
+                <li><input type="checkbox"> <input type="text" placeholder="Task 2"></li>
+                <li><input type="checkbox"> <input type="text" placeholder="Task 3"></li>
+            </ul>
+            <h2>Next Week</h2>
+            <ul>
+                <li><input type="checkbox"> <input type="text" placeholder="Next Week Plan"></li>
+            </ul>
+        </div>
+
+        <div class="days-grid">
+            <div class="day">
+                <div class="day-header">
+                    <span>Monday</span>
+                    <input type="checkbox">
+                </div>
+                <textarea class="notes"></textarea>
+            </div>
+            <div class="day">
+                <div class="day-header">
+                    <span>Tuesday</span>
+                    <input type="checkbox">
+                </div>
+                <textarea class="notes"></textarea>
+            </div>
+            <div class="day">
+                <div class="day-header">
+                    <span>Wednesday</span>
+                    <input type="checkbox">
+                </div>
+                <textarea class="notes"></textarea>
+            </div>
+            <div class="day">
+                <div class="day-header">
+                    <span>Thursday</span>
+                    <input type="checkbox">
+                </div>
+                <textarea class="notes"></textarea>
+            </div>
+            <div class="day">
+                <div class="day-header">
+                    <span>Friday</span>
+                    <input type="checkbox">
+                </div>
+                <textarea class="notes"></textarea>
+            </div>
+            <div class="day">
+                <div class="day-header">
+                    <span>Saturday</span>
+                    <input type="checkbox">
+                </div>
+                <textarea class="notes"></textarea>
+            </div>
+            <div class="day">
+                <div class="day-header">
+                    <span>Sunday</span>
+                    <input type="checkbox">
+                </div>
+                <textarea class="notes"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("input", function (event) {
+        if (event.target.classList.contains("notes")) {
+            event.target.style.height = "auto";
+            event.target.style.height = event.target.scrollHeight + "px";
+        }
+    });
+</script>
 </body>
 </html>
