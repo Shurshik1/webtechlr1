@@ -114,3 +114,28 @@ img {
     align-items: center;
   }
 } 
+
+#schedule {
+  margin: 20px 0;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.schedule-day {
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-day h3 {
+  margin-top: 0;
+}
+
+.schedule-day p {
+  margin: 5px 0;
+}
