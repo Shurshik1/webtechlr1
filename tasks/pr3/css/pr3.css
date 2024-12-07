@@ -1,0 +1,23 @@
+.button {
+  background-color: #333; /* Чорний фон */
+  border: 2px solid #fff; /* Біле обрамлення */
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px; 
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s; 
+}
+
+.button:hover {
+  background-color: #555;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+}
+
+.button:active {
+  background-color: #111;
+  transform: scale(0.95);
