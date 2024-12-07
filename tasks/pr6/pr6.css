@@ -1,0 +1,103 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+    background-size: 800% 800%;
+    animation: gradientAnimation 15s ease infinite;
+  }
+  
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .pokeball {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: rollIn 2s ease-in-out, jump 2s ease-in-out 2s infinite;
+  }
+  
+  .pokeball-top,
+  .pokeball-bottom {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: red;
+    border: 2px solid black;
+    transition: transform 0.5s;
+  }
+  
+  .pokeball-top {
+    top: 0;
+    background: red;
+  }
+  
+  .pokeball-bottom {
+    top: 50%;
+    background: white;
+  }
+  
+  .pokeball-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .pokeball.open .pokeball-top {
+    transform: translateY(-75px);
+  }
+  
+  .pokeball.open .pokeball-bottom {
+    transform: translateY(75px);
+  }
+  
+  .gengar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  
+  .pokeball.open .gengar {
+    opacity: 1;
+  }
+  
+  @keyframes rollIn {
+    0% {
+      transform: translateX(-200px) rotate(-720deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0) rotate(0deg);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes jump {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-150px);
+    }
+    60% {
+      transform: translateY(-75px);
+    }
+  }
